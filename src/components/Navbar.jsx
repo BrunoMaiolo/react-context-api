@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { BudgetContext } from "../context/BudgetContext";
 
 function Navbar() {
@@ -10,9 +11,17 @@ function Navbar() {
 
   return (
     <nav>
-      <button onClick={toggleBudget}>
-        {budgetMode ? "Disattiva Modalità Budget" : "Attiva Modalità Budget"}
-      </button>
+      {/* link navigazione */}
+      <Link to="/">Home</Link> |{" "}
+      <Link to="/products">Prodotti</Link> |{" "}
+      <Link to="/about">About</Link>
+
+      {/* bottone budget */}
+      <div>
+        <button onClick={toggleBudget}>
+          {budgetMode ? "Disattiva Modalità Budget" : "Attiva Modalità Budget"}
+        </button>
+      </div>
     </nav>
   );
 }
